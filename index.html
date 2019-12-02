@@ -2,7 +2,7 @@
   <head>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> 
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 
     <script src="./assets/script.js"></script>
 
@@ -13,17 +13,21 @@
                   <a-asset-item id="mew" src="./assets/mew/scene.gltf"></a-asset-item>
                   <a-asset-item id="gym" src="./assets/gym/scene.gltf"></a-asset-item>
                   <a-asset-item id="rayquaza" src="./assets/rayquaza/scene.gltf"></a-asset-item>
+                  <a-asset-item id="city-obj" src="./assets/city/CamelliaCity.obj"></a-asset-item>
+                  <a-asset-item id="city-mtl" src="./assets/city/CamelliaCity.mtl"></a-asset-item>
+                  <a-asset-item id="city2-obj" src="./assets/city2/CasteliaCity.obj"></a-asset-item>
+                  <a-asset-item id="city2-mtl" src="./assets/city2/CasteliaCity.mtl"></a-asset-item>
 
 
                 </a-assets>
-              
-                <a-entity position="0 0.5 -8" gltf-model="#mew" scale="0.004 0.004 0.004" animation-mixer="clip: metarig|Idel01"></a-entity>
-                <a-entity position="0 0.1 -4" gltf-model="#gym" animation-mixer></a-entity>
-                <a-entity position="0 50 -140" animation="property: position; to: 0 50 100; dur: 10000;" scale="0.01 0.01 0.01" gltf-model="#rayquaza" animation-mixer></a-entity>
-                <a-entity environment></a-entity>
+                <a-camera listener position="0 1 5" animation="property: position; to: 0 1 -12.7; dur: 3000;" ></a-camera>
 
-                
 
+                <a-entity id="mew-entity" position="0 0.5 -18" gltf-model="#mew" scale="0 0 0" animation-mixer="clip: metarig|Idel01"></a-entity>
+                <a-entity position="0 0.1 -14" gltf-model="#gym" animation-mixer></a-entity>
+                <a-entity position="0 -2 -50" obj-model="obj: #city-obj; mtl: #city-mtl" scale="0.01 0.01 0.01"></a-entity>
+                <a-entity position="2 3 -8" animation="property: position; to: 2 3 10; dur: 10000;" scale="0.001 0.001 0.001" gltf-model="#rayquaza" animation-mixer></a-entity>
+                <a-entity environment="preset: forest; ground: flat"></a-entity>
 
         </a-scene>
   </body>
