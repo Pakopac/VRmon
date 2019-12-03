@@ -2,16 +2,19 @@ window.onload = function() {
     
     let scene = document.querySelector("a-scene");
     let camera = document.querySelector("#camera");
-    let btn = document.querySelector("#btn");
     let milotic = document.querySelector("#milotic-entity");
     let pokeball = document.querySelector("#pokeball-entity");
     let mew = document.querySelector("#mew-entity")
 
     AFRAME.registerComponent("listener", {
         tick: function() {
-           
-            if (camera.getAttribute("position").z <= 35) {
-                milotic.onclick = () => {
+            var cameraEl = document.querySelector('#camera');
+            var worldPos = new THREE.Vector3();
+            worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
+            console.log(worldPos.z);
+            if (worldPos.z <= 35) {
+                
+                scene.onclick = () => {
                     console.log("dfg")
                     pokeball.setAttribute("animation", "property: position; to: 0 0.5 33; dur: 1000;")
                     setTimeout(() => {
@@ -31,8 +34,7 @@ window.onload = function() {
                 };
             }
 
-            btn.onclick = () => {
-                console.log('sdfgdsdfghgfdsfghnjhgfdsdfghjhgfdfghjhgfdfghj')
+            if (worldPos.z <= -10) {
                 mew.setAttribute("animation", "property: scale; to: 0.004 0.004 0.004; dur: 1000;");
             }
 
