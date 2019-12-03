@@ -15,30 +15,39 @@
                   <a-asset-item id="rayquaza" src="./assets/rayquaza/scene.gltf"></a-asset-item>
                   <a-asset-item id="city-obj" src="./assets/city/CamelliaCity.obj"></a-asset-item>
                   <a-asset-item id="city-mtl" src="./assets/city/CamelliaCity.mtl"></a-asset-item>
-                  <a-asset-item id="pokecenter-obj" src="./assets/pokecenter/Elm Pokémon Lab.obj"></a-asset-item>
-                  <a-asset-item id="pokecenter-mtl" src="./assets/pokecenter/Elm Pokémon Lab.mtl"></a-asset-item>
+                  <a-asset-item id="pokeball" src="./assets/pokeball/scene.gltf"></a-asset-item>
+                  <a-asset-item id="milotic" src="./assets/milotic/scene.gltf"></a-asset-item>
+                  <a-asset-item id="pokecenter" src="./assets/pokecenter/pokemoncenter.gltf"></a-asset-item>
+                  <a-asset-item id="joel" src="./assets/joel/joel.gltf"></a-asset-item>
                   <img id="road" src="./assets/road/dirt2.jpg">
 
 
 
                 </a-assets>
-                <a-camera listener position="0 1 5" animation="property: position; to: 0 1 -12.7; dur: 3000;" ></a-camera>
 
-                
+                <a-entity id="rig" movement-controls position="0 0 0">
+                  <a-entity id="camera" listener camera position="0 1 35"></a-entity>
+              </a-entity>                
+                <a-entity id="pokeball-entity" position="0 3 34" scale="0.1 0.1 0.1" gltf-model="#pokeball"></a-entity>
+                <a-entity id="milotic-entity" position="0 0.2 33" rotation="0 300 0" scale="0.1 0.1 0.1" gltf-model="#milotic"></a-entity>
+
                 <a-entity position="0 0.1 -14" gltf-model="#gym" animation-mixer></a-entity>
+                <a-box id="btn" position="-1 0.5 -15" rotation="0 45 0" color="#4CC3D9"></a-box>
                 <a-entity id="mew-entity" position="0 0.5 -18" gltf-model="#mew" scale="0 0 0" animation-mixer="clip: metarig|Idel01"></a-entity>
-                <a-entity position="2 3 -8" animation="property: position; to: 2 3 10; dur: 10000;" scale="0.001 0.001 0.001" gltf-model="#rayquaza" animation-mixer></a-entity>
 
                 <a-plane material="src: #road" position="0 0.01 -25" rotation="-90 90 0" width="14.5" height="4"></a-plane>
 
-                <a-plane position="0 0.01 -35" rotation="-90 0 0" width="8" height="5"></a-plane>
-
-
-
                 <a-entity position="0 -2 -50" obj-model="obj: #city-obj; mtl: #city-mtl" scale="0.01 0.01 0.01"></a-entity>
-                <a-entity position="0 4 -35" obj-model="obj: #pokecenter-obj; mtl: #pokecenter-mtl" scale="10 10 10"></a-entity>
+                <a-entity position="0 3 -35" gltf-model="#pokecenter" scale="0.09 0.07 0.09" ></a-entity>
+                <a-entity position="4 0 -38" scale="0.06 0.06 0.06" rotation="0 -90 0" gltf-model="#joel"></a-entity>
+                <a-entity position="4 2.5 -37" rotation="0 -90 0" text="anchor: center; value: Vos Pokemons ont ete soigne.; color: red; width: 5"></a-entity>
+                <a-entity position="0.1 1.4 33" rotation="0 0 0"
+                text="anchor: center; sizewidth: 5; height: 2; color: red; value:Capturez le Millobelus en cliquant dessus !"></a-entity>
 
-                
+                <a-plane color="yellow" position="-0.1 0.01 -36.5" rotation="-90 0 0" width="10.5" height="7.5"></a-plane>
+
+
+                <a-entity position="0 2 -55" rotation="180 0 180" scale="0.01 0.01 0.01" gltf-model="#rayquaza" animation-mixer></a-entity>
                 <a-entity environment="preset: forest; ground: flat; dressingAmount: 50"></a-entity>
 
         </a-scene>
