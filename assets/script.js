@@ -5,6 +5,7 @@ window.onload = function() {
     let milotic = document.querySelector("#milotic-entity");
     let pokeball = document.querySelector("#pokeball-entity");
     let mew = document.querySelector("#mew-entity")
+    let textJoel = document.querySelector("#text-joel")
 
     AFRAME.registerComponent("listener", {
         tick: function() {
@@ -12,8 +13,8 @@ window.onload = function() {
             var worldPos = new THREE.Vector3();
             worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
             console.log(worldPos.z);
+
             if (worldPos.z <= 35) {
-                
                 scene.onclick = () => {
                     console.log("dfg")
                     pokeball.setAttribute("animation", "property: position; to: 0 0.5 33; dur: 1000;")
@@ -35,9 +36,13 @@ window.onload = function() {
             }
 
             if (worldPos.z <= -10) {
-                mew.setAttribute("animation", "property: scale; to: 0.004 0.004 0.004; dur: 1000;");
+                return mew.setAttribute("animation", "property: scale; to: 0.004 0.004 0.004; dur: 1000;");
             }
 
+
+            if (worldPos.z <= -35) {
+                return textJoel.setAttribute("text", "anchor: center; value: Vos Pokemons ont ete soigne.; color: red; width: 5");
+            }
 
             if(this.el.getAttribute('position').z == -38){
                console.log('okkkkkkkkkkkkkkkkkkkk')

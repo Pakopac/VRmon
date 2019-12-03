@@ -13,8 +13,6 @@
                   <a-asset-item id="mew" src="./assets/mew/scene.gltf"></a-asset-item>
                   <a-asset-item id="gym" src="./assets/gym/scene.gltf"></a-asset-item>
                   <a-asset-item id="rayquaza" src="./assets/rayquaza/scene.gltf"></a-asset-item>
-                  <a-asset-item id="city-obj" src="./assets/city/CamelliaCity.obj"></a-asset-item>
-                  <a-asset-item id="city-mtl" src="./assets/city/CamelliaCity.mtl"></a-asset-item>
                   <a-asset-item id="pokeball" src="./assets/pokeball/scene.gltf"></a-asset-item>
                   <a-asset-item id="milotic" src="./assets/milotic/scene.gltf"></a-asset-item>
                   <a-asset-item id="pokecenter" src="./assets/pokecenter/pokemoncenter.gltf"></a-asset-item>
@@ -36,10 +34,9 @@
 
                 <a-plane material="src: #road" position="0 0.01 -25" rotation="-90 90 0" width="14.5" height="4"></a-plane>
 
-                <a-entity position="0 -2 -50" obj-model="obj: #city-obj; mtl: #city-mtl" scale="0.01 0.01 0.01"></a-entity>
                 <a-entity position="0 3 -35" gltf-model="#pokecenter" scale="0.09 0.07 0.09" ></a-entity>
-                <a-entity position="4 0 -38" scale="0.06 0.06 0.06" rotation="0 -90 0" gltf-model="#joel"></a-entity>
-                <a-entity position="4 2.5 -37" rotation="0 -90 0" text="anchor: center; value: Vos Pokemons ont ete soigne.; color: red; width: 5"></a-entity>
+                <a-entity position="2 0 -38" scale="0.06 0.06 0.06" gltf-model="#joel"></a-entity>
+                <a-entity position="2 2.5 -37"></a-entity>
                 <a-entity position="0.1 1.4 33" rotation="0 0 0"
                 text="anchor: center; sizewidth: 5; height: 2; color: red; value:Capturez le Millobelus en cliquant dessus !"></a-entity>
 
