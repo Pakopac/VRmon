@@ -5,6 +5,7 @@ window.onload = function() {
     let milotic = document.querySelector("#milotic-entity");
     let pokeball = document.querySelector("#pokeball-entity");
     let mew = document.querySelector("#mew-entity")
+    let rayquaza = document.querySelector("#rayquaza-entity")
     let textJoel = document.querySelector("#text-joel")
 
     AFRAME.registerComponent("listener", {
@@ -41,7 +42,7 @@ window.onload = function() {
 
 
             if (worldPos.z <= -35) {
-                return textJoel.setAttribute("text", "anchor: center; value: Vos Pokemons ont ete soigne.; color: red; width: 5");
+
             }
 
             if(this.el.getAttribute('position').z == -38){

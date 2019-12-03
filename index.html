@@ -18,9 +18,6 @@
                   <a-asset-item id="pokecenter" src="./assets/pokecenter/pokemoncenter.gltf"></a-asset-item>
                   <a-asset-item id="joel" src="./assets/joel/joel.gltf"></a-asset-item>
                   <img id="road" src="./assets/road/dirt2.jpg">
-
-
-
                 </a-assets>
 
                 <a-entity id="rig" movement-controls position="0 0 0">
@@ -36,14 +33,14 @@
 
                 <a-entity position="0 3 -35" gltf-model="#pokecenter" scale="0.09 0.07 0.09" ></a-entity>
                 <a-entity position="2 0 -38" scale="0.06 0.06 0.06" gltf-model="#joel"></a-entity>
-                <a-entity position="2 2.5 -37"></a-entity>
+                <a-entity id="text-joel" text="anchor: center; value: Vos Pokemons ont ete soigne.; color: red; width: 5" position="3 2.5 -38"></a-entity>
                 <a-entity position="0.1 1.4 33" rotation="0 0 0"
                 text="anchor: center; sizewidth: 5; height: 2; color: red; value:Capturez le Millobelus en cliquant dessus !"></a-entity>
 
                 <a-plane color="yellow" position="-0.1 0.01 -36.5" rotation="-90 0 0" width="10.5" height="7.5"></a-plane>
 
 
-                <a-entity position="0 2 -55" rotation="180 0 180" scale="0.01 0.01 0.01" gltf-model="#rayquaza" animation-mixer></a-entity>
+                <a-entity id="rayquaza-entity" position="0 2 -55" rotation="180 0 180" scale="0.01 0.01 0.01" gltf-model="#rayquaza" animation-mixer></a-entity>
                 <a-entity environment="preset: forest; ground: flat; dressingAmount: 50"></a-entity>
 
         </a-scene>
