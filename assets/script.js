@@ -36,6 +36,7 @@ window.onload = function() {
             }
 
                     if (worldPos.z >= 35 && worldPos.z <= 37 && captureComplete === false) {
+                        pokeball.setAttribute("visible", true)
                         pokeball.setAttribute("animation", "property: position; to: 0 0.5 32; dur: 1000;");
                         setTimeout(() => {
                             if (milotic.parentNode !== null) {
@@ -72,6 +73,8 @@ window.onload = function() {
 
 
             if (worldPos.z <= -10 && battleComplete === false && worldPos.x >= -4 && worldPos.x <= 4) {
+                  let battle_music = new Audio('https://cdn.glitch.com/560eb6a6-f7b4-468d-a5c4-c0248ae18df3%2Fbattle.mp3?v=1575467060919');
+                        battle_music.play();
                 rig.setAttribute("movement-controls", "enabled: false");
                 battleComplete = true
                 setTimeout(()=>{
@@ -89,6 +92,7 @@ window.onload = function() {
                               milotic2.setAttribute("visible", false);
                               rig.setAttribute("movement-controls", "enabled: true");
                               lightning.setAttribute("visible", false);
+                              battle_music.pause()
                           }, 2000)
                         }, 6000)
                     }, 2000);
