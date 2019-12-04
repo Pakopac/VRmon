@@ -11,15 +11,10 @@
   <body>
         <a-scene>
                 <a-assets>
-                  <a-asset-item id="mew" src="./assets/mew/scene.gltf"></a-asset-item>
                   <a-asset-item id="gym" src="./assets/gym/scene.gltf"></a-asset-item>
-                  <a-asset-item id="rayquaza" src="./assets/rayquaza/scene.gltf"></a-asset-item>
                   <a-asset-item id="pokeball" src="./assets/pokeball/scene.gltf"></a-asset-item>
-                  <a-asset-item id="milotic" src="./assets/milotic/scene.gltf"></a-asset-item>
                   <a-asset-item id="pokecenter" src="./assets/pokecenter/pokemoncenter.gltf"></a-asset-item>
-                  <a-asset-item id="joel" src="./assets/joel/joel.gltf"></a-asset-item>
                   <a-asset-item id="star" src="./assets/star/scene.gltf"></a-asset-item>
-                  <a-asset-item id="lightning" src="./assets/lightning/scene.gltf"></a-asset-item>
                   <img id="road" src="./assets/road/dirt2.jpg">
                 </a-assets>
 
@@ -27,34 +22,33 @@
               <a-entity fps-counter></a-entity>
             </a-entity>
 
-                <a-entity id="rig" position="0 0.5 40">
-                  <a-entity id="camera" listener camera position="0 0.5 40">
+                <a-entity id="rig" movement-controls="speed: 0.5" position="0 1 40">
+                  <a-entity id="camera" listener camera position="0 1 40">
                   </a-entity>
-              </a-entity>                
+              </a-entity>           
+                 <a-plane id="milotic-entity"  position="0 0.5 33"  rotation="0 45 0" color="#4CC3D9" material="src:https://cdn.glitch.com/560eb6a6-f7b4-468d-a5c4-c0248ae18df3%2Fpikachu.png?v=1575449378576;transparent:true"></a-plane>
                 <a-entity id="pokeball-entity" position="0 3 34" scale="0.1 0.1 0.1" gltf-model="#pokeball"></a-entity>
-                <a-entity id="milotic-entity" position="0 0.5 33" scale="0.1 0.1 0.1" gltf-model="#milotic"></a-entity>
 
-                <a-entity position="0 0.1 -14" gltf-model="#gym" animation-mixer></a-entity>
-                <a-entity id="mew-entity" position="0 0.5 -18" gltf-model="#mew" scale="0 0 0"></a-entity>
+                <a-entity position="0 0.1 -14" gltf-model="#gym"></a-entity>
+                <a-plane id="mew-entity" scale="0 0 0" position="0 4.5 -18" color="#4CC3D9" material="src:https://cdn.glitch.com/560eb6a6-f7b4-468d-a5c4-c0248ae18df3%2Fmackogneur.png?v=1575450076575;transparent:true"></a-plane>
 
                 <a-plane material="src: #road" position="0 0.01 -25" rotation="-90 90 0" width="14.5" height="4"></a-plane>
 
                 <a-entity position="0 3 -35" gltf-model="#pokecenter" scale="0.09 0.07 0.09" ></a-entity>
-                <a-entity position="2 0 -38" scale="0.06 0.06 0.06" gltf-model="#joel"></a-entity>
+                <a-plane position="2 1.5 -38" scale="1 2.5 1" rotation="0 0 0" material="src:https://cdn.glitch.com/560eb6a6-f7b4-468d-a5c4-c0248ae18df3%2Fjoy.png?v=1575454305788;transparent:true"></a-plane>
                 <a-entity id="text-joel" text="anchor: center; value: Vos Pokemons ont ete soigne.; color: red; width: 5" position="3 2.5 -38"></a-entity>
                 <a-entity position="0.1 1.4 33" rotation="0 0 0"
-                text="anchor: center; sizewidth: 5; height: 2; color: red; value:Capturez le Millobelus en cliquant dessus !"></a-entity>
+                text="anchor: center; sizewidth: 5; height: 2; color: red; value:Un Pikachu sauvage! Attrapez le!!"></a-entity>
 
                 <a-plane color="yellow" position="-0.1 0.01 -36.5" rotation="-90 0 0" width="10.5" height="7.5"></a-plane>
-
-                <a-entity id="rayquaza-entity" position="0 2 -55" rotation="180 0 180" scale="0.01 0.01 0.01" gltf-model="#rayquaza" animation-mixer></a-entity>
 
                 <a-entity id="star-entity1" position="0 0.5 33" rotation="0 0 30" scale="0.0001 0.0001 0.0001" gltf-model="#star" animation-mixer visible="false"></a-entity>
                 <a-entity id="star-entity2" position="0 0.5 33" rotation="0 0 0" scale="0.0001 0.0001 0.0001" gltf-model="#star" animation-mixer visible="false"></a-entity>
                 <a-entity id="star-entity3" position="0 0.5 33" rotation="0 0 -30" scale="0.0001 0.0001 0.0001" gltf-model="#star" animation-mixer visible="false"></a-entity>
 
-                <a-entity id="milotic-entity2" position="0 0.5 -11" rotation="0 90 0" scale="0 0 0" gltf-model="#milotic"></a-entity>
-                <a-entity visible="false" id="lightning-entity" position="-25 25 -16" scale="1 1 1" gltf-model="#lightning"></a-entity>
+        
+                <a-plane id="milotic-entity2"  position="0 0.6 -12" scale="0 0 0" material="src:https://cdn.glitch.com/560eb6a6-f7b4-468d-a5c4-c0248ae18df3%2Fpikachu_back.png?v=1575451463700;transparent:true"></a-plane>
+                <a-plane id="lightning-entity" visible="false"  position="0 25 -17" scale="10 10 10" material="src:https://cdn.glitch.com/560eb6a6-f7b4-468d-a5c4-c0248ae18df3%2Flightning.png?v=1575452660112;transparent:true"></a-plane>
 
                 <a-entity environment="preset: forest; ground: flat; dressingAmount: 50"></a-entity>
 
