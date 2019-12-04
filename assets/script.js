@@ -6,7 +6,6 @@ window.onload = function() {
     let milotic2 = document.querySelector("#milotic-entity2");
     let pokeball = document.querySelector("#pokeball-entity");
     let mew = document.querySelector("#mew-entity");
-    let rayquaza = document.querySelector("#rayquaza-entity");
     let textJoel = document.querySelector("#text-joel");
     let rig = document.querySelector("#rig");
     let lightning = document.querySelector("#lightning-entity");
@@ -17,20 +16,21 @@ window.onload = function() {
 
     let captureComplete = false;
     let battleComplete = false;
+    let isEnterPokecenter = false
 
     AFRAME.registerComponent("listener", {
         tick: function() {
             var cameraEl = document.querySelector('#camera');
 
             scene.addEventListener('enter-vr', function () {
-                cameraEl.object3D.position.set(0, 0.5, 45);
+                cameraEl.object3D.position.set(0, 0, 45);
             });
 
             var worldPos = new THREE.Vector3();
             worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
             console.log(worldPos.z);
             if (worldPos.z >= 25 && worldPos.z <= 34 && captureComplete === false) {
-                cameraEl.object3D.position.set(0, 0.5, 41);
+                cameraEl.object3D.position.set(0, 0, 41);
                 rig.setAttribute("movement-controls", "enabled: false")
             }
 
@@ -72,34 +72,34 @@ window.onload = function() {
 
             if (worldPos.z <= -10 && battleComplete === false) {
                 rig.setAttribute("movement-controls", "enabled: false");
+                battleComplete = true
                 setTimeout(()=>{
-                    milotic2.setAttribute("animation", "property: scale; to: 0.05 0.05 0.05; dur: 1000;");
+                    milotic2.setAttribute("animation", "property: scale; to: 1 1 1; dur: 1000;");
                     setTimeout(()=>{
-                        lightning.setAttribute("animation", "property: position; to: -25 0 -16; dur: 2000");
+                        lightning.setAttribute("animation", "property: position; to: 0 5 -17; dur: 2000");
                         lightning.setAttribute("visible", true);
+                         let lightning_audio = new Audio('./assets/lightning.mp3');
+                          lightning_audio.play();
                         setTimeout(() =>{
                           mew.setAttribute("visible", false);
                           setTimeout(() =>{
                               milotic2.setAttribute("visible", false);
                               rig.setAttribute("movement-controls", "enabled: true");
+                              lightning.setAttribute("visible", false);
                           }, 1000)
                         }, 6000)
                     }, 2000);
                 }, 1000);
-                return mew.setAttribute("animation", "property: scale; to: 0.004 0.004 0.004; dur: 1000;");
+                return mew.setAttribute("animation", "property: scale; to: 10 10 10; dur: 1000;");
+            }
+            if (worldPos.z <= -33 && isEnterPokecenter === false){
+              console.log('ok')
+              isEnterPokecenter = true;
+                let healing_pokemon_sound = new Audio('https://cdn.glitch.com/560eb6a6-f7b4-468d-a5c4-c0248ae18df3%2Fhealing-pokemon-sound.mp3?v=1575455116900');
+                healing_pokemon_sound.play();
+            
             }
 
-
-            if (worldPos.z <= -35) {
-
-            }
-
-            if(this.el.getAttribute('position').z == -38){
-               console.log('okkkkkkkkkkkkkkkkkkkk')
-                setTimeout(() => {
-                    console.log("tddffd")
-                }, 1000)
-            }
         }
     });
 };
